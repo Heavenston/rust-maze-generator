@@ -1,6 +1,6 @@
 [package]
 name = "wasm-maze"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Heavenston <malolegendrelemaire@gmail.com>"]
 edition = "2018"
 
@@ -9,6 +9,9 @@ edition = "2018"
 [lib]
 name = "wasm_maze_generator"
 crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+lto = true
 
 [dependencies]
 bitfield = "0.13.2"
