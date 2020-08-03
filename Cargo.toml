@@ -1,9 +1,16 @@
 [package]
-name = "maze-wasm"
+name = "wasm-maze"
 version = "0.1.0"
 authors = ["Heavenston <malolegendrelemaire@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "wasm_maze_generator"
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
+bitfield = "0.13.2"
+rand = {version = "0.7.3", features = ["small_rng", "wasm-bindgen", "stdweb"]}
+wasm-bindgen = "0.2.67"
